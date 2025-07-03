@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import type { ReactNode } from "react";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { ApiContext } from "./ApiContext";
