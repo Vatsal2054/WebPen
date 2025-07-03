@@ -33,7 +33,7 @@ export interface SaveCodeRequest {
     message?: string;
   }
 
-const API_BASE = "https://d60tcno229.execute-api.ap-south-1.amazonaws.com/prod";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 interface ApiProviderProps {
   children: ReactNode;
