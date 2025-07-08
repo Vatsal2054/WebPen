@@ -5,11 +5,11 @@ const Home: React.FC = () => (
   <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50" style={{ fontFamily: 'Mona Sans, ui-sans-serif, system-ui' }}>
     {/* Hero Section */}
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5"></div>
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200"></div>
+      <div className="relative max-w-7xl mx-auto px-6 py-30">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Welcome to <span className="text-blue-600">WebPen</span>
+            Welcome to <span className="text-blue-600 font-[900]">WebPen</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Your all-in-one code editor and sharing platform. Build, share, and collaborate on code with instant cloud storage.
@@ -172,6 +172,28 @@ const Home: React.FC = () => (
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Share & Collaborate</h3>
             <p className="text-gray-600">Share your unique link with anyone. They can view, copy, or fork your code instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Quick Share Notice */}
+    <section className="py-12 bg-amber-50 border-t border-amber-100">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="flex items-center justify-center gap-4 text-center">
+          <div className="flex-shrink-0">
+            <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-amber-900 mb-1">Quick Share Links</h3>
+            <p className="text-amber-700">
+              Shared code links are available for <span className="font-semibold">1 hour</span> for optimal performance and security. 
+              Perfect for quick collaboration and code reviews.
+            </p>
           </div>
         </div>
       </div>
