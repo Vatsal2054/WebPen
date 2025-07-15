@@ -42,13 +42,12 @@ interface ApiProviderProps {
 export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   // Save code (POST)
   const saveCode = async (data: SaveCodeRequest): Promise<SaveCodeResponse> => {
-    console.log("Saving code:", data);
+    // console.log("Saving code:", data);
 
     try {
       const response = await axios.post(`${API_BASE}/save`, data);
       toast.success("Link generated successfully!");
-      console.log("Save response:", response.data);
-
+      // console.log("Save response:", response.data);
       return response.data as SaveCodeResponse;
     } catch (error) {
       console.error("Save code error:", error);
@@ -71,11 +70,11 @@ export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
   const getCode = async (id: string): Promise<GetCodeResponse> => {
     try {
       const response = await axios.get(`${API_BASE}/get/${id}`);
-      console.log("Get response:", response.data);
+      // console.log("Get response:", response.data);
 
       return response.data as GetCodeResponse;
     } catch (error) {
-      console.error("Get code error:", error);
+      // console.error("Get code error:", error);
 
       if (error instanceof AxiosError) {
         const errorMessage =
