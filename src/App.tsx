@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { EditorProvider } from './context/EditorContext';
+import { EditorProvider } from './context/EditorProvider';
 import { ApiProvider } from './context/ApiProvider';
 import Layout from './pages/Layout';
 import EditorPage from './pages/Editor';

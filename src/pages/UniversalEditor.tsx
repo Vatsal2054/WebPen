@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom";
 
 const LANGUAGES = [
   { value: "javascript", label: "JavaScript" },
+  { value: "jsx", label: "JSX" },
   { value: "typescript", label: "TypeScript" },
+  { value: "tsx", label: "TSX" },
   { value: "python", label: "Python" },
   { value: "java", label: "Java" },
   { value: "c", label: "C" },
@@ -110,7 +112,9 @@ const UniversalEditor: React.FC = () => {
     const getFileExtension = (lang: string) => {
       const extensions: { [key: string]: string } = {
         javascript: 'js',
+        jsx: 'jsx',
         typescript: 'ts',
+        tsx: 'tsx',
         python: 'py',
         java: 'java',
         c: 'c',
@@ -153,7 +157,9 @@ const UniversalEditor: React.FC = () => {
   const getLanguageIcon = (lang: string) => {
     const icons: { [key: string]: string } = {
       javascript: "🟨",
+      jsx: "⚛️",
       typescript: "🔷",
+      tsx: "⚛️",
       python: "🐍",
       java: "☕",
       c: "⚙️",
@@ -173,6 +179,31 @@ const UniversalEditor: React.FC = () => {
       plaintext: "📝"
     };
     return icons[lang] || "📄";
+  };
+
+  // Map language to file extension(s) for file input
+  const languageToExtension: { [key: string]: string } = {
+    javascript: '.js',
+    jsx: '.jsx',
+    typescript: '.ts',
+    tsx: '.tsx',
+    python: '.py',
+    java: '.java',
+    c: '.c',
+    cpp: '.cpp',
+    csharp: '.cs',
+    go: '.go',
+    php: '.php',
+    ruby: '.rb',
+    rust: '.rs',
+    html: '.html',
+    css: '.css',
+    json: '.json',
+    markdown: '.md',
+    shell: '.sh',
+    yaml: '.yaml,.yml',
+    xml: '.xml',
+    plaintext: '.txt',
   };
 
   return (
@@ -319,7 +350,7 @@ const UniversalEditor: React.FC = () => {
               id="file-upload"
               type="file"
               title="Upload code file"
-              accept=".js,.jsx,.ts,.tsx,.py,.java,.c,.cpp,.cs,.go,.php,.rb,.rs,.html,.css,.json,.md,.sh,.yaml,.yml,.xml,.txt"
+              accept={languageToExtension[language] || '.txt'}
               ref={fileInputRef}
               onChange={handleFileUpload}
               className="hidden"
@@ -365,6 +396,7 @@ const UniversalEditor: React.FC = () => {
                   title="Remove File"
                   onClick={() => {
                     setFileName(null);
+                    setCode("");
                     if (fileInputRef.current) {
                       fileInputRef.current.value = "";
                     }
