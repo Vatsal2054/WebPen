@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { EditorContext } from "./EditorContext";
 
 const defaultHTML = `<!-- Write your HTML here -->\n<div class='hello'>Hello, WebPen!</div>`;
